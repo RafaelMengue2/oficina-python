@@ -305,7 +305,16 @@
                   <span class="label" id="defeito-label">Defeito:</span>
                   <span class="car-attribute" id="defeito">{{ car.defeito }}</span>
                 </p>
+
+                <a href="{% url 'editcar' car.id %}">
+                  <button type="button">Editar</button>
+                </a>
               </div>
+
+              <form method="post" action="{% url 'deletecar' car.id %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit">Excluir</button>
+              </form>
             {% endfor %}
             {% else %}
               <p style="color: #fff; text-align: center; font-family: Poppins; font-size: 20px;">
