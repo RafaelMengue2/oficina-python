@@ -8,16 +8,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
   <style media="screen">
-    *,
-    *:before,
-    *:after {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      background-color: #00041B;
+      background-color: #00041b;
+      margin: 0;
+      padding: 0;
     }
 
     .background {
@@ -70,12 +64,20 @@
 
     .nav-side {
       background-color: rgba(255, 255, 255, 0.12999999523162842);
-      height: 940px;
-      width: 320px;
+      height: 95%;
+      width: 250px;
       border-radius: 10px;
       border: 1px solid #ffffff;
       backdrop-filter: blur(30px);
-    }
+      position: fixed;
+      top: 0; /* Added top position */
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+  }
 
     .menudaoficina {
       color: #ffffff;
@@ -84,9 +86,8 @@
       font-size: 40px;
       font-family: Poppins;
       top: 55px;
-      left: 50px;
-      width: 220px;
-      height: 99px;
+      width: 200px;
+      height: auto;
       position: absolute;
       line-height: 40px;
       border-style: hidden;
@@ -102,10 +103,10 @@
       background-color: #23a2f6;
       color: #fff;
       text-align: center;
-      font-size: 32px;
+      font-size: 26px;
       font-family: Poppins;
-      width: 249px;
-      height: 70px;
+      width: 200px;
+      height: 50px;
       position: absolute;
       line-height: 45px; /* Adjusted to center text vertically */
       border-style: hidden;
@@ -155,8 +156,6 @@
     }
 
     form {
-      height: 850px;
-      width: 800px;
       background-color: rgba(255,255,255,0.13);
       position: absolute;
       transform: translate(-50%,-50%);
@@ -233,6 +232,47 @@
       margin-top: 8px;
       font-size: 14px;
       font-weight: 300;
+    }
+    @media only screen and (max-width: 1200px) {
+      .nav-side {
+        width: 100%;
+        left: 0;
+      }
+    
+      .veiculos,
+      .pecas,
+      .servico,
+      .clientes,
+      .mecanicos,
+      .os {
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+      }
+    
+      .container {
+        width: 100%;
+        margin-left: 0;
+      }
+    
+      .container-add {
+        width: 100%;
+        left: 0;
+        margin-top: 0;
+      }
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .container,
+      .container-add {
+        width: 100%;
+        margin-left: 0;
+        left: 0;
+      }
+    
+      .container-add {
+        margin-top: 20px;
+      }
     }
   </style>
 </head>

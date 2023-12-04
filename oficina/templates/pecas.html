@@ -62,8 +62,8 @@
 
       .nav-side {
         background-color: rgba(255, 255, 255, 0.12999999523162842);
-        height: 100%;
-        width: 320px;
+        height: 95%;
+        width: 250px;
         border-radius: 10px;
         border: 1px solid #ffffff;
         backdrop-filter: blur(30px);
@@ -83,10 +83,9 @@
         vertical-align: text-top;
         font-size: 40px;
         font-family: Poppins;
-        left: 60px;
         top: 55px;
-        width: 220px;
-        height: 99px;
+        width: 200px;
+        height: auto;
         position: absolute;
         line-height: 40px;
         border-style: hidden;
@@ -102,10 +101,10 @@
         background-color: #23a2f6;
         color: #fff;
         text-align: center;
-        font-size: 32px;
+        font-size: 26px;
         font-family: Poppins;
-        width: 249px;
-        height: 70px;
+        width: 200px;
+        height: 50px;
         position: absolute;
         line-height: 45px; /* Adjusted to center text vertically */
         border-style: hidden;
@@ -140,7 +139,7 @@
       .os {
         top: 85%;
         height: 145px;
-        line-height: 1.2; /* Adjusted for the increased height */
+        line-height: 1.0;
         transform: translate(-50%, -50%);
       }
 
@@ -156,11 +155,11 @@
 
       .container {
         background-color: rgba(255, 255, 255, 0.12999999523162842);
-        width: 800px;
+        width: 600px;
         border-radius: 10px;
         border: 1px solid #ffffff;
         margin-top: 60px;
-        margin-left: 500px;
+        margin-left: 350px;
         position: relative;
         backdrop-filter: blur(30px);
         display: flex;
@@ -193,13 +192,13 @@
       
       .container-add {
         background-color: rgba(255, 255, 255, 0.12999999523162842);
-        height: 322px;
-        width: 317px;
+        height: 200px;
+        width: 200px;
         border-radius: 10px;
         border: 1px solid #ffffff;
         position: fixed;
-        margin-top: -150px;
-        left: 1400px; 
+        margin-top: -200px;
+        left: 65%; 
         backdrop-filter: blur(30px);
         display: flex;
         flex-direction: column;
@@ -260,6 +259,48 @@
               display: block;
               font-weight: bold;
               color: #fff;
+            }
+
+            @media only screen and (max-width: 1200px) {
+              .nav-side {
+                width: 100%;
+                left: 0;
+              }
+            
+              .veiculos,
+              .pecas,
+              .servico,
+              .clientes,
+              .mecanicos,
+              .os {
+                width: 100%;
+                left: 0;
+                transform: translateX(0);
+              }
+            
+              .container {
+                width: 100%;
+                margin-left: 0;
+              }
+            
+              .container-add {
+                width: 100%;
+                left: 0;
+                margin-top: 0;
+              }
+            }
+            
+            @media only screen and (max-width: 600px) {
+              .container,
+              .container-add {
+                width: 100%;
+                margin-left: 0;
+                left: 0;
+              }
+            
+              .container-add {
+                margin-top: 20px;
+              }
             }
           </style>      
           <title>Home Page</title>
