@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adicionar Peças</title>
+  <title>Adicionar Veiculo</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
@@ -83,8 +83,8 @@
       vertical-align: text-top;
       font-size: 40px;
       font-family: Poppins;
-      left: 60px;
       top: 55px;
+      left: 50px;
       width: 220px;
       height: 99px;
       position: absolute;
@@ -97,13 +97,15 @@
     .pecas,
     .servico,
     .clientes,
+    .mecanicos,
     .os {
       background-color: #23a2f6;
-      color: #FFF;
+      color: #fff;
       text-align: center;
       font-size: 32px;
       font-family: Poppins;
       width: 249px;
+      height: 70px;
       position: absolute;
       line-height: 45px; /* Adjusted to center text vertically */
       border-style: hidden;
@@ -114,15 +116,31 @@
       transform: translateX(-50%);
       transition: background-color 0.3s, transform 0.3s;
     }
-    
-    .veiculos { top: 30%; transform: translate(-50%, -50%); }
-    .pecas { top: 40%; transform: translate(-50%, -50%); }
-    .servico { top: 50%; transform: translate(-50%, -50%); }
-    .clientes { top: 60%; transform: translate(-50%, -50%); }
+
+    .veiculos {
+      top: 30%;
+      transform: translate(-50%, -50%);
+    }
+    .pecas {
+      top: 40%;
+      transform: translate(-50%, -50%);
+    }
+    .servico {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .clientes {
+      top: 60%;
+      transform: translate(-50%, -50%);
+    }
+    .mecanicos {
+      top: 70%;
+      transform: translate(-50%, -50%);
+    }
     .os {
-      top: 75%;
+      top: 85%;
       height: 145px;
-      line-height: 1.2; /* Adjusted for the increased height */
+      line-height: 1.0;
       transform: translate(-50%, -50%);
     }
 
@@ -130,9 +148,10 @@
     .pecas:hover,
     .servico:hover,
     .clientes:hover,
+    .mecanicos:hover,
     .os:hover {
-      background-color: #1845ad; /* Change the color on hover */
-      transform: translate(-50%, -50%) scale(1.05); /* Add scale for a zoom effect on hover */
+      background-color: #1845ad;
+      transform: translate(-50%, -50%) scale(1.05);
     }
 
     form {
@@ -203,6 +222,18 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
+    #id_defeito {
+      display: block;
+      height: 50px;
+      width: 100%;
+      background-color: rgba(255,255,255,0.07);
+      border-radius: 3px;
+      padding: 0 10px;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 300;
+    }
   </style>
 </head>
 <body>
@@ -221,7 +252,8 @@
     <a href="{% url 'pecas' %}"><button type="submit" class="pecas">Peças</button></a>
     <a href="{% url 'servicos' %}"><button type="submit" class="servico">Serviços</button></a>
     <a href="{% url 'cliente' %}"><button type="submit" class="clientes">Clientes</button></a>
-    <a href="{% url 'home' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button></a>
+    <a href="{% url 'mecanicos' %}"><button type="submit" class="mecanicos">Mecânicos</button></a>
+    <a href="{% url 'ordens' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button></a>
   </div>
 
   <div class="clickable">
@@ -229,7 +261,7 @@
       {% csrf_token %}
       <h3>Adicionar Carro</h3>
       {{ form.as_p }}
-      <button type="submit" class="add">Cadastrar Peça</button>
+      <button type="submit" class="add">Cadastrar Veiculo</button>
     </form>
   </div>
 </body>

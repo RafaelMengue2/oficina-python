@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Adicionar Cliente</title>
+    <title>Adicionar Mecânico</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
@@ -13,57 +13,70 @@
         margin: 0;
         box-sizing: border-box;
       }
-  
+
       body {
         background-color: #00041B;
       }
-  
+
       .background {
-        width: 100%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        width: 1200px;
+        height: 520px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
       }
-  
+
       .background .shape {
         height: 200px;
         width: 200px;
+        position: absolute;
         border-radius: 50%;
         animation: float 10s infinite alternate;
+        /* Floating animation */
       }
-  
+
       @keyframes float {
         to {
           transform: translateY(-50px) translateX(-10px);
+          /* Adjust the floating distance */
         }
       }
-  
+
       .shape:nth-child(1) {
         background: linear-gradient(#1845ad, #23a2f6);
+        left: 40%;
+        top: 30%;
       }
-  
+
       .shape:nth-child(2) {
         background: linear-gradient(to right, #ff512f, #f09819);
+        left: 20%;
+        top: 50%;
       }
-  
+
       .shape:nth-child(3) {
         background: linear-gradient(#1845ad, #23a2f6);
+        right: 80%;
+        top: 10%;
       }
-  
+
       .shape:nth-child(4) {
         background: linear-gradient(to right, #ff512f, #f09819);
+        left: 10%;
+        bottom: 10%;
       }
-  
+
       .shape:nth-child(5) {
         background: linear-gradient(#1845ad, #23a2f6);
+        right: 40%;
+        bottom: 30%;
       }
-  
+
       .shape:nth-child(6) {
         background: linear-gradient(to right, #ff512f, #f09819);
+        right: 20%;
+        top: 60%;
       }
 
       .nav-side {
@@ -103,7 +116,6 @@
         font-size: 32px;
         font-family: Poppins;
         width: 249px;
-        height: 70px;
         position: absolute;
         line-height: 45px; /* Adjusted to center text vertically */
         border-style: hidden;
@@ -186,7 +198,7 @@
         color: #e5e5e5;
     }
     button{
-        margin-top: 50px;
+        margin-top: -70px;
         width: 100%;
         background-color: #ffffff;
         color: #080710;
@@ -196,6 +208,18 @@
         border-radius: 5px;
         cursor: pointer;
     }
+
+    .add{
+      margin-top: 70px;
+      width: 100%;
+      background-color: #ffffff;
+      color: #080710;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+  }
     </style>
 
     <title>Adicionar Cliente</title>
@@ -216,17 +240,39 @@
       <a href="{% url 'pecas' %}"><button type="submit" class="pecas">Peças</button></a>
       <a href="{% url 'servicos' %}"><button type="submit" class="servico">Serviços</button></a>
       <a href="{% url 'cliente' %}"><button type="submit" class="clientes">Clientes</button></a>
-      <a href="{% url 'mecanicos' %}"><button type="submit" class="mecanicos">Mecânicos</button></a>
+      <a href="{% url 'mecanicos' %}"><button type="submit" class="mecanicos">Mecânicos</button>
       <a href="{% url 'ordens' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button></a>
+
     </div>
 
-    <div class="clickable">
-      <form method="post" action="{% url 'addclientes' %}">
-        <h3>Adicionar Cliente</h3>
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit">Salvar</button>
-      </form>
+<div class="clickable">
+    <form method="post" action="{% url 'addmecanicos' %}">
+      <h3>Adicionar Mecânicos</h3>
+      {% csrf_token %}
+      
+      <div class="form-group">
+        <label for="{{ form.nome.id_for_label }}">Nome:</label>
+        {{ form.nome }}
+      </div>
+      
+      <div class="form-group">
+        <label for="{{ form.sobrenome.id_for_label }}">Sobrenome:</label>
+        {{ form.sobrenome }}
+      </div>
+      
+      <div class="form-group">
+        <label for="{{ form.endereco.id_for_label }}">Endereço:</label>
+        {{ form.endereco }}
+      </div>
+      
+      <div class="form-group">
+        <label for="{{ form.especialidade.id_for_label }}">Especialidade:</label>
+        {{ form.especialidade }}
+      </div>
+  
+      <button type="submit" class="add">Adicionar Mecânico</button>
+    </form>
   </div>
+  
   </body>
 </html>

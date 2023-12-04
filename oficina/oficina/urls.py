@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.urls import path
 from app1 import views
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.SignupPage,name='signup'),
@@ -11,8 +10,6 @@ urlpatterns = [
     
     path('home/',views.HomePage, name='home'),
     path('addcar/', views.AddCarPage, name="addcar"),
-    path('editcar/', EditCarPage, name="editcar"),
-    path('deletecar/', views.DeleteCar, name="deletecar"),
     
     path('pecas/', views.PecaPage, name="pecas"),
     path('addpecas/', views.AddPecaPage, name="addpecas"),
@@ -22,5 +19,12 @@ urlpatterns = [
     
     path('clientes/', views.ClientePage, name="cliente"),
     path('addclientes/', views.AddClientePage, name="addclientes"),
- 
+    
+    path('mecanicos/', views.MecanicosPage, name='mecanicos'),
+    path('addmecanicos/', views.AddMecanicoPage, name='addmecanicos'),
+    
+    path('ordens/', views.OrdensPage, name='ordens'),
+    path('addordem/', views.AddOrdemPage, name='addordem'),
+    
+
 ]

@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Car, Peca, Servico, Cliente
-from .forms import PecaForm, ServicoForm, CarForm, ClienteForm
+from .models import Car, Peca, Servico, Cliente, Mecanico, OrdemServico
+from .forms import CarForm, PecaForm, ServicoForm, ClienteForm, MecanicoForm, OrdemServicoForm
 
 from django.shortcuts import render
 
@@ -71,28 +71,6 @@ def AddCarPage(request):
 
     return render(request, "addcar.html", {'form': form})
 
-
-@login_required(login_url='login')
-def EditCarPage(request, car_id):
-    car = get_object_or_404(Car, id=car_id)
-
-    if request.method == 'POST':
-        form = CarForm(request.POST, instance=car)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    else:
-        form = CarForm(instance=car)
-
-    return render(request, "editcar.html", {'form': form, 'car': car})
-
-@login_required(login_url='login')
-def DeleteCar(request, car_id):
-    car = get_object_or_404(Car, id=car_id)
-    car.delete()
-    return redirect('home')
-
-
 @login_required(login_url='login')
 def HomePage(request):
     cars = Car.objects.all()
@@ -121,7 +99,6 @@ def ServicoPage(request):
     servicos = Servico.objects.all()
     return render(request, 'servicos.html', {'servicos': servicos})
 
-# views.py
 @login_required(login_url='login')
 def AddServicoPage(request):
     if request.method == 'POST':
@@ -129,18 +106,10 @@ def AddServicoPage(request):
         if form.is_valid():
             form.save()
             return redirect('servicos')
-        else:
-            print(form.errors)  # Print form errors to the console
     else:
         form = ServicoForm()
 
     return render(request, 'addservicos.html', {'form': form})
-
-
-
-
-
-
 
 @login_required(login_url='login')
 def ClientePage(request):
@@ -158,3 +127,37 @@ def AddClientePage(request):
         form = ClienteForm()
 
     return render(request, 'addclientes.html', {'form': form})
+
+@login_required(login_url='login')
+def MecanicosPage(request):
+    mecanicos = Mecanico.objects.all()
+    return render(request, 'mecanicos.html', {'mecanicos': mecanicos})
+
+@login_required(login_url='login')
+def AddMecanicoPage(request):
+    if request.method == 'POST':
+        form = MecanicoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('mecanicos')
+    else:
+        form = MecanicoForm()
+
+    return render(request, 'addmecanicos.html', {'form': form})
+
+@login_required(login_url='login')
+def OrdensPage(request):
+    ordens = OrdemServico.objects.all()
+    return render(request, 'ordens.html', {'ordens': ordens})
+
+@login_required(login_url='login')
+def AddOrdemPage(request):
+    if request.method == 'POST':
+        form = OrdemServicoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('ordens')
+    else:
+        form = OrdemServicoForm()
+
+    return render(request, 'addordem.html', {'form': form})

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Clientes</title>
+    <title>Ordens de Serviço</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
@@ -13,11 +13,11 @@
         margin: 0;
         box-sizing: border-box;
       }
-  
+
       body {
-        background-color: #00041B;
+        background-color: #00041b;
       }
-  
+
       .background {
         width: 100%;
         height: 100vh;
@@ -28,114 +28,114 @@
         justify-content: space-around;
         align-items: center;
       }
-  
+
       .background .shape {
         height: 200px;
         width: 200px;
         border-radius: 50%;
         animation: float 10s infinite alternate;
       }
-  
+
       @keyframes float {
         to {
           transform: translateY(-50px) translateX(-10px);
         }
       }
-  
+
       .shape:nth-child(1) {
         background: linear-gradient(#1845ad, #23a2f6);
       }
-  
+
       .shape:nth-child(2) {
         background: linear-gradient(to right, #ff512f, #f09819);
       }
-  
+
       .shape:nth-child(3) {
         background: linear-gradient(#1845ad, #23a2f6);
       }
-  
+
       .shape:nth-child(4) {
         background: linear-gradient(to right, #ff512f, #f09819);
       }
-  
+
       .shape:nth-child(5) {
         background: linear-gradient(#1845ad, #23a2f6);
       }
-  
+
       .shape:nth-child(6) {
         background: linear-gradient(to right, #ff512f, #f09819);
       }
-      
-      .nav-side {
-        background-color: rgba(255, 255, 255, 0.12999999523162842);
-        height: 940px;
-        width: 320px;
-        border-radius: 10px;
-        border: 1px solid #ffffff;
-        backdrop-filter: blur(30px);
-      }
-
-      .menudaoficina {
-        color: #ffffff;
-        text-align: center;
-        vertical-align: text-top;
-        font-size: 40px;
-        font-family: Poppins;
-        left: 60px;
-        top: 55px;
-        width: 220px;
-        height: 99px;
-        position: absolute;
-        line-height: 40px;
-        border-style: hidden;
-        outline: none;
-      }
-
-      .veiculos,
-      .pecas,
-      .servico,
-      .clientes,
-      .mecanicos,
-      .os {
-        background-color: #23a2f6;
-        color: #FFF;
-        text-align: center;
-        font-size: 32px;
-        font-family: Poppins;
-        width: 249px;
-        height: 70px;
-        position: absolute;
-        line-height: 45px; /* Adjusted to center text vertically */
-        border-style: hidden;
-        border-radius: 10px;
-        outline: none;
-        cursor: pointer;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: background-color 0.3s, transform 0.3s;
-      }
-      
-      .veiculos { top: 30%; transform: translate(-50%, -50%); }
-      .pecas { top: 40%; transform: translate(-50%, -50%); }
-      .servico { top: 50%; transform: translate(-50%, -50%); }
-      .clientes { top: 60%; transform: translate(-50%, -50%); }
-      .mecanicos { top: 70%; transform: translate(-50%, -50%); }
-      .os {
-        top: 85%;
-        height: 145px;
-        line-height: 1.2; /* Adjusted for the increased height */
-        transform: translate(-50%, -50%);
-      }
   
-      .veiculos:hover,
-      .pecas:hover,
-      .servico:hover,
-      .clientes:hover,
-      .mecanicos:hover,
-      .os:hover {
-        background-color: #1845ad; /* Change the color on hover */
-        transform: translate(-50%, -50%) scale(1.05); /* Add scale for a zoom effect on hover */
-      }
+        .nav-side {
+          background-color: rgba(255, 255, 255, 0.12999999523162842);
+          height: 940px;
+          width: 320px;
+          border-radius: 10px;
+          border: 1px solid #ffffff;
+          backdrop-filter: blur(30px);
+        }
+  
+        .menudaoficina {
+          color: #ffffff;
+          text-align: center;
+          vertical-align: text-top;
+          font-size: 40px;
+          font-family: Poppins;
+          left: 60px;
+          top: 55px;
+          width: 220px;
+          height: 99px;
+          position: absolute;
+          line-height: 40px;
+          border-style: hidden;
+          outline: none;
+        }
+  
+        .veiculos,
+        .pecas,
+        .servico,
+        .clientes,
+        .mecanicos,
+        .os {
+          background-color: #23a2f6;
+          color: #FFF;
+          text-align: center;
+          font-size: 32px;
+          font-family: Poppins;
+          width: 249px;
+          height: 60px;
+          position: absolute;
+          line-height: 45px; /* Adjusted to center text vertically */
+          border-style: hidden;
+          border-radius: 10px;
+          outline: none;
+          cursor: pointer;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .veiculos { top: 30%; transform: translate(-50%, -50%); }
+        .pecas { top: 40%; transform: translate(-50%, -50%); }
+        .servico { top: 50%; transform: translate(-50%, -50%); }
+        .clientes { top: 60%; transform: translate(-50%, -50%); }
+        .mecanicos { top: 70%; transform: translate(-50%, -50%); }
+        .os {
+          top: 85%;
+          height: 145px;
+          line-height: 1.2; /* Adjusted for the increased height */
+          transform: translate(-50%, -50%);
+        }
+    
+        .veiculos:hover,
+        .pecas:hover,
+        .servico:hover,
+        .clientes:hover,
+        .mecanicos:hover,
+        .os:hover {
+          background-color: #1845ad; /* Change the color on hover */
+          transform: translate(-50%, -50%) scale(1.05); /* Add scale for a zoom effect on hover */
+        }
        
       .container {
         background-color: rgba(255, 255, 255, 0.12999999523162842);
@@ -181,7 +181,7 @@
         border-radius: 10px;
         border: 1px solid #ffffff;
         position: fixed;
-        margin-top: -150px;
+        margin-top: -200px;
         left: 1400px; 
         backdrop-filter: blur(30px);
         display: flex;
@@ -244,52 +244,60 @@
               font-weight: bold;
               color: #fff;
             }
+
+            .mecanicos {
+                top: 70%; /* Change the vertical position to move it down */
+                transform: translate(-50%, -50%);
+              }
+              
     </style>
 
-    <title>Clientes</title>
+    <title>Ordem de Serviço</title>
   </head>
   <body>
     <div class="background">
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-    </div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
 
     <div class="nav-side">
       <h3 class="menudaoficina">Menu da Oficina</h3>
-      <a href="{% url 'home' %}"><button type="submit" class="veiculos">Veiculos</button></a>
-      <a href="{% url 'pecas' %}"><button type="submit" class="pecas">Peças</button>
-      <a href="{% url 'servicos' %}"><button type="submit" class="servico">Serviços</button>
-      <a href="{% url 'cliente' %}"><button type="submit" class="clientes">Clientes</button>
-        <a href="{% url 'mecanicos' %}"><button type="submit" class="mecanicos">Mecânicos</button></a>
-      <a href="{% url 'ordens' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button>
+        <a href="{% url 'home' %}"><button type="submit" class="veiculos">Veiculos</button></a>
+        <a href="{% url 'pecas' %}"><button type="submit" class="pecas">Peças</button>
+        <a href="{% url 'servicos' %}"><button type="submit" class="servico">Serviços</button>
+        <a href="{% url 'cliente' %}"><button type="submit" class="clientes">Clientes</button>
+        <a href="{% url 'mecanicos' %}"><button type="submit" class="mecanicos">Mecânicos</button>
+        <a href="{% url 'ordens' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button>
+
     </div>
 
     <div class="container">
-      {% if clientes %}
-        {% for cliente in clientes %}
+      {% if ordens %}
+        {% for ordem in ordens %}
           <div class="car-info">
             <p>
-              <span class="label" id="nome-label">Nome:</span>
-              <span class="car-attribute" id="nome">{{ cliente.nome }}</span>
+              <span class="label" id="numero-ordem-label">Número da Ordem:</span>
+              <span class="car-attribute" id="numero-ordem">{{ ordem.numero_ordem }}</span>
               <hr>
             </p>
             <p>
-              <span class="label" id="sobrenome-label">Sobrenome:</span>
-              <span class="car-attribute" id="sobrenome">{{ cliente.sobrenome }}</span>
+              <span class="label" id="cliente-label">Cliente:</span>
+              <span class="car-attribute" id="cliente">{{ ordem.cliente.nome }} {{ ordem.cliente.sobrenome }}</span>
               <hr>
             </p>
             <p>
-              <span class="label" id="endereco-label">Endereço:</span>
-              <span class="car-attribute" id="endereco">{{ cliente.endereco }}</span>
+              <span class="label" id="servico-label">Serviço:</span>
+              <span class="car-attribute" id="servico">{{ ordem.servico.peca.marca }}</span>
               <hr>
             </p>
             <p>
-              <span class="label" id="numero-label">Número de Telefone:</span>
-              <span class="car-attribute" id="numero">{{ cliente.numero }}</span>
+              <span class="label" id="preco-label">Data de Emissão:</span>
+              <span class="car-attribute" id="preco">{{ ordem.servico.data_servico }}</span>
+              <hr>
             </p>
           </div>
         {% endfor %}
@@ -300,7 +308,9 @@
       {% endif %}
     </div>
 
-    <a href="{% url 'addclientes' %}" class="container-add">
+      
+
+    <a href="{% url 'addordem' %}" class="container-add">
       <i class="fas fa-plus"></i>
       <p class="text-add">Adicionar</p>
     </a>

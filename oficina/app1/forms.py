@@ -1,5 +1,5 @@
 from django import forms
-from .models import Car, Peca, Servico, Cliente
+from .models import Car, Peca, Servico, Cliente, Mecanico, OrdemServico
 
 class PecaForm(forms.ModelForm):
     class Meta:
@@ -9,7 +9,7 @@ class PecaForm(forms.ModelForm):
 class CarForm(forms.ModelForm):
     class Meta:
         model = Car
-        fields = ['carname', 'model', 'placa', 'dono', 'defeito']
+        fields = ['carname', 'placa', 'dono', 'defeito']
 
 class ServicoForm(forms.ModelForm):
     class Meta:
@@ -20,3 +20,13 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = ['nome', 'sobrenome', 'endereco', 'numero']
+
+class MecanicoForm(forms.ModelForm):
+    class Meta:
+        model = Mecanico
+        fields = ['nome', 'sobrenome', 'endereco', 'especialidade']
+        
+class OrdemServicoForm(forms.ModelForm):
+    class Meta:
+        model = OrdemServico
+        fields = ['mecanico', 'servico', 'cliente']

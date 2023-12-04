@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Adicionar Cliente</title>
+    <title>Adicionar Ordem de Serviço</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
     <style media="screen">
       *,
       *:before,
@@ -13,11 +19,11 @@
         margin: 0;
         box-sizing: border-box;
       }
-  
+
       body {
-        background-color: #00041B;
+        background-color: #00041b;
       }
-  
+
       .background {
         width: 100%;
         height: 100vh;
@@ -28,40 +34,40 @@
         justify-content: space-around;
         align-items: center;
       }
-  
+
       .background .shape {
         height: 200px;
         width: 200px;
         border-radius: 50%;
         animation: float 10s infinite alternate;
       }
-  
+
       @keyframes float {
         to {
           transform: translateY(-50px) translateX(-10px);
         }
       }
-  
+
       .shape:nth-child(1) {
         background: linear-gradient(#1845ad, #23a2f6);
       }
-  
+
       .shape:nth-child(2) {
         background: linear-gradient(to right, #ff512f, #f09819);
       }
-  
+
       .shape:nth-child(3) {
         background: linear-gradient(#1845ad, #23a2f6);
       }
-  
+
       .shape:nth-child(4) {
         background: linear-gradient(to right, #ff512f, #f09819);
       }
-  
+
       .shape:nth-child(5) {
         background: linear-gradient(#1845ad, #23a2f6);
       }
-  
+
       .shape:nth-child(6) {
         background: linear-gradient(to right, #ff512f, #f09819);
       }
@@ -98,12 +104,11 @@
       .mecanicos,
       .os {
         background-color: #23a2f6;
-        color: #FFF;
+        color: #fff;
         text-align: center;
         font-size: 32px;
         font-family: Poppins;
         width: 249px;
-        height: 70px;
         position: absolute;
         line-height: 45px; /* Adjusted to center text vertically */
         border-style: hidden;
@@ -114,19 +119,34 @@
         transform: translateX(-50%);
         transition: background-color 0.3s, transform 0.3s;
       }
-      
-      .veiculos { top: 30%; transform: translate(-50%, -50%); }
-      .pecas { top: 40%; transform: translate(-50%, -50%); }
-      .servico { top: 50%; transform: translate(-50%, -50%); }
-      .clientes { top: 60%; transform: translate(-50%, -50%); }
-      .mecanicos { top: 70%; transform: translate(-50%, -50%); }
+
+      .veiculos {
+        top: 30%;
+        transform: translate(-50%, -50%);
+      }
+      .pecas {
+        top: 40%;
+        transform: translate(-50%, -50%);
+      }
+      .servico {
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .clientes {
+        top: 60%;
+        transform: translate(-50%, -50%);
+      }
+      .mecanicos {
+        top: 70%;
+        transform: translate(-50%, -50%);
+      }
       .os {
         top: 85%;
         height: 145px;
         line-height: 1.2; /* Adjusted for the increased height */
         transform: translate(-50%, -50%);
       }
-  
+
       .veiculos:hover,
       .pecas:hover,
       .servico:hover,
@@ -136,56 +156,65 @@
         background-color: #1845ad; /* Change the color on hover */
         transform: translate(-50%, -50%) scale(1.05); /* Add scale for a zoom effect on hover */
       }
-      
-      form{
+
+      form {
         height: 700px;
         width: 800px;
-        background-color: rgba(255,255,255,0.13);
+        background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
         border-radius: 10px;
         backdrop-filter: blur(10px);
-        border: 2px solid rgba(255,255,255,0.1);
-        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
         padding: 50px 35px;
-    }
-    form *{
-        font-family: 'Poppins',sans-serif;
+      }
+
+      .clickable {
+        pointer-events: auto;
+      }
+
+      form * {
+        font-family: "Poppins", sans-serif;
         color: #ffffff;
         letter-spacing: 0.5px;
         outline: none;
         border: none;
-    }
-    form h3 {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 42px;
-      text-align: center;
-    }
-    
-    label{
+        }
+
+      form h3 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+      }
+
+      label {
         display: block;
         margin-top: 30px;
         font-size: 16px;
         font-weight: 500;
-    }
-    input{
+      }
+
+      input {
         display: block;
         height: 50px;
         width: 100%;
-        background-color: rgba(255,255,255,0.07);
+        background-color: rgba(255, 255, 255, 0.07);
         border-radius: 3px;
         padding: 0 10px;
         margin-top: 8px;
         font-size: 14px;
         font-weight: 300;
-    }
-    ::placeholder{
+      }
+
+      ::placeholder {
         color: #e5e5e5;
-    }
-    button{
+      }
+
+      button {
         margin-top: 50px;
         width: 100%;
         background-color: #ffffff;
@@ -195,10 +224,55 @@
         font-weight: 600;
         border-radius: 5px;
         cursor: pointer;
-    }
-    </style>
+      }
 
-    <title>Adicionar Cliente</title>
+      #id_mecanico{
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(255,255,255,0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      #id_cliente{
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(255,255,255,0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      #id_servico{
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(255,255,255,0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      option {
+        font-weight: normal;
+        display: block;
+        min-height: 1.2em;
+        padding: 0px 2px 1px;
+        white-space: nowrap;
+        background-color: rgba(255, 255, 255, 0.07); /* Add this line for background color */
+    }
+    
+    </style>
+    <title>Adicionar Ordem de Serviço</title>
   </head>
   <body>
     <div class="background">
@@ -217,16 +291,20 @@
       <a href="{% url 'servicos' %}"><button type="submit" class="servico">Serviços</button></a>
       <a href="{% url 'cliente' %}"><button type="submit" class="clientes">Clientes</button></a>
       <a href="{% url 'mecanicos' %}"><button type="submit" class="mecanicos">Mecânicos</button></a>
-      <a href="{% url 'ordens' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button></a>
+      <a href="{% url 'ordens' %}"><button type="submit" class="os">Ordens<br />de<br />Serviço</button></a>
     </div>
 
     <div class="clickable">
-      <form method="post" action="{% url 'addclientes' %}">
-        <h3>Adicionar Cliente</h3>
+        <form method="post" action="{% url 'addordem' %}">
           {% csrf_token %}
+          <h3>Adicionar Ordem de Serviço</h3>
+          
+          <label for="data_servico">Data do Serviço:</label>
+          <input type="date" id="data_servico" name="data_servico" required />
+    
           {{ form.as_p }}
-          <button type="submit">Salvar</button>
-      </form>
-  </div>
+          <button type="submit">Cadastrar Ordem</button>
+        </form>
+      </div>
   </body>
 </html>

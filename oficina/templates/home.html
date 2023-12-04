@@ -83,7 +83,6 @@
         vertical-align: text-top;
         font-size: 40px;
         font-family: Poppins;
-        left: 60px;
         top: 55px;
         width: 220px;
         height: 99px;
@@ -97,6 +96,7 @@
       .pecas,
       .servico,
       .clientes,
+      .mecanicos,
       .os {
         background-color: #23a2f6;
         color: #fff;
@@ -132,10 +132,14 @@
         top: 60%;
         transform: translate(-50%, -50%);
       }
+      .mecanicos {
+        top: 70%;
+        transform: translate(-50%, -50%);
+      }
       .os {
-        top: 75%;
+        top: 85%;
         height: 145px;
-        line-height: 1.2; /* Adjusted for the increased height */
+        line-height: 1.0;
         transform: translate(-50%, -50%);
       }
 
@@ -143,6 +147,7 @@
       .pecas:hover,
       .servico:hover,
       .clientes:hover,
+      .mecanicos:hover,
       .os:hover {
         background-color: #1845ad;
         transform: translate(-50%, -50%) scale(1.05);
@@ -274,54 +279,41 @@
             <a href="{% url 'pecas' %}"><button type="submit" class="pecas">Peças</button>
             <a href="{% url 'servicos' %}"><button type="submit" class="servico">Serviços</button>
             <a href="{% url 'cliente' %}"><button type="submit" class="clientes">Clientes</button>
-            <a href="{% url 'home' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button>
+              <a href="{% url 'mecanicos' %}"><button type="submit" class="mecanicos">Mecânicos</button>
+            <a href="{% url 'ordens' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button>
           </div>
       
-          <div class="container">
-            {% if cars%}
-              {% for car in cars %}
-              <div class="car-info">
-                <p>
-                  <span class="label" id="marca-label">Marca:</span>
-                  <span class="car-attribute" id="marca">{{ car.carname }}</span>
-                  <hr>
+            <div class="container">
+              {% if cars%}
+                {% for car in cars %}
+                <div class="car-info">
+                  <p>
+                    <span class="label" id="marca-label">Carro:</span>
+                    <span class="car-attribute" id="marca">{{ car.carname }}</span>
+                    <hr>
+                  </p>
+                  <p>
+                    <span class="label" id="placa-label">Placa:</span>
+                    <span class="car-attribute" id="placa">{{ car.placa }}</span>
+                    <hr>
+                  </p>
+                  <p>
+                    <span class="label" id="dono-label">Dono:</span>
+                    <span class="car-attribute" id="dono">{{ car.dono }}</span>
+                    <hr>
                 </p>
                 <p>
-                  <span class="label" id="modelo-label">Modelo:</span>
-                  <span class="car-attribute" id="modelo">{{ car.model }}</span>
-                  <hr>
+                    <span class="label" id="defeito-label">Defeito:</span>
+                    <span class="car-attribute" id="defeito">{{ car.defeito }}</span>
+                  </p>
+                </div>
+              {% endfor %}
+              {% else %}
+                <p style="color: #fff; text-align: center; font-family: Poppins; font-size: 20px;">
+                  Nada cadastrado ainda!
                 </p>
-                <p>
-                  <span class="label" id="placa-label">Placa:</span>
-                  <span class="car-attribute" id="placa">{{ car.placa }}</span>
-                  <hr>
-                </p>
-                <p>
-                  <span class="label" id="dono-label">Dono:</span>
-                  <span class="car-attribute" id="dono">{{ car.dono }}</span>
-                  <hr>
-               </p>
-               <p>
-                  <span class="label" id="defeito-label">Defeito:</span>
-                  <span class="car-attribute" id="defeito">{{ car.defeito }}</span>
-                </p>
-
-                <a href="{% url 'editcar' car.id %}">
-                  <button type="button">Editar</button>
-                </a>
-              </div>
-
-              <form method="post" action="{% url 'deletecar' car.id %}" style="display: inline;">
-                {% csrf_token %}
-                <button type="submit">Excluir</button>
-              </form>
-            {% endfor %}
-            {% else %}
-              <p style="color: #fff; text-align: center; font-family: Poppins; font-size: 20px;">
-                Nada cadastrado ainda!
-              </p>
-            {% endif %}
-          </div>
+              {% endif %}
+            </div>
       
           <a href="{% url 'addcar' %}" class="container-add">
             <i class="fas fa-plus"></i>

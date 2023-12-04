@@ -97,6 +97,7 @@
       .pecas,
       .servico,
       .clientes,
+      .mecanicos,
       .os {
         background-color: #23a2f6;
         color: #fff;
@@ -132,8 +133,12 @@
         top: 60%;
         transform: translate(-50%, -50%);
       }
+      .mecanicos {
+        top: 70%;
+        transform: translate(-50%, -50%);
+      }
       .os {
-        top: 75%;
+        top: 85%;
         height: 145px;
         line-height: 1.2; /* Adjusted for the increased height */
         transform: translate(-50%, -50%);
@@ -143,6 +148,7 @@
       .pecas:hover,
       .servico:hover,
       .clientes:hover,
+      .mecanicos:hover,
       .os:hover {
         background-color: #1845ad;
         transform: translate(-50%, -50%) scale(1.05);
@@ -274,7 +280,8 @@
             <a href="{% url 'pecas' %}"><button type="submit" class="pecas">Peças</button>
             <a href="{% url 'servicos' %}"><button type="submit" class="servico">Serviços</button>
             <a href="{% url 'cliente' %}"><button type="submit" class="clientes">Clientes</button>
-            <a href="{% url 'home' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button>
+            <a href="{% url 'mecanicos' %}"><button type="submit" class="mecanicos">Mecânicos</button></a>
+            <a href="{% url 'ordens' %}"><button type="submit" class="os">Ordens<br>de<br>Serviço</button>
           </div>
       
           <div class="container">
