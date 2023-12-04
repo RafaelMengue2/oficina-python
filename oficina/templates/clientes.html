@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Clientes</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <style media="screen">
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #00041B;
+      }
+
+      .background {
+        width: 1200px;
+        height: 520px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+      }
+
+      .background .shape {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        border-radius: 50%;
+        animation: float 10s infinite alternate;
+        /* Floating animation */
+      }
+
+      @keyframes float {
+        to {
+          transform: translateY(-50px) translateX(-10px);
+          /* Adjust the floating distance */
+        }
+      }
+
+      .shape.shape1 {
+        background: linear-gradient(#1845ad, #23a2f6);
+        left: 40%;
+        top: -40%;
+      }
+      
+      .shape.shape2 {
+        background: linear-gradient(to right, #ff512f, #f09819);
+        left: 30%;
+        top: 80%;
+      }
+      
+      .shape.shape3 {
+        background: linear-gradient(#1845ad, #23a2f6);
+        right: 80%;
+        top: 0%;
+      }
+      
+      .shape.shape4 {
+        background: linear-gradient(to right, #ff512f, #f09819);
+        left: -11%;
+        bottom: -20%;
+      }
+      
+      .shape.shape5 {
+        background: linear-gradient(#1845ad, #23a2f6);
+        right: 0%;
+        bottom: 10%;
+      }
+      
+      .shape.shape6 {
+        background: linear-gradient(to right, #ff512f, #f09819);
+        right: 20%;
+        top: 10%;
+      }
+      
+      .nav-side {
+        background-color: rgba(255, 255, 255, 0.12999999523162842);
+        height: 940px;
+        width: 320px;
+        border-radius: 10px;
+        border: 1px solid #ffffff;
+        backdrop-filter: blur(30px);
+      }
+
+      .menudaoficina {
+        color: #ffffff;
+        text-align: center;
+        vertical-align: text-top;
+        font-size: 40px;
+        font-family: Poppins;
+        left: 60px;
+        top: 55px;
+        width: 220px;
+        height: 99px;
+        position: absolute;
+        line-height: 40px;
+        border-style: hidden;
+        outline: none;
+      }
+
+      .veiculos,
+      .pecas,
+      .servico,
+      .clientes,
+      .os {
+        background-color: #23a2f6;
+        color: #FFF;
+        text-align: center;
+        font-size: 32px;
+        font-family: Poppins;
+        width: 249px;
+        height: 70px;
+        position: absolute;
+        line-height: 45px; /* Adjusted to center text vertically */
+        border-style: hidden;
+        border-radius: 10px;
+        outline: none;
+        cursor: pointer;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      
+      .veiculos { top: 30%; transform: translate(-50%, -50%); }
+      .pecas { top: 40%; transform: translate(-50%, -50%); }
+      .servico { top: 50%; transform: translate(-50%, -50%); }
+      .clientes { top: 60%; transform: translate(-50%, -50%); }
+      .os {
+        top: 75%;
+        height: 145px;
+        line-height: 1.2; /* Adjusted for the increased height */
+        transform: translate(-50%, -50%);
+      }
+  
+      .veiculos:hover,
+      .pecas:hover,
+      .servico:hover,
+      .clientes:hover,
+      .os:hover {
+        background-color: #1845ad; /* Change the color on hover */
+        transform: translate(-50%, -50%) scale(1.05); /* Add scale for a zoom effect on hover */
+      }
+
+      .container {
+        background-color: rgba(255, 255, 255, 0.12999999523162842);
+        height: 200px;
+        width: 317px;
+        border-radius: 10px;
+        border: 1px solid #ffffff;
+        top: 104px;
+        left: 417px;
+        position: absolute;
+        backdrop-filter: blur(30px);
+      }
+      
+      .text {
+        text-align: start;
+        color: #ffffff;
+        font-size: 20px;
+        font-family: Poppins;
+        left: 30px;
+        position: absolute;
+        border-style: hidden;
+        outline: none;
+      }
+      
+      .text:nth-child(2) {
+        top: 50px; /* Espaçamento entre a primeira e a segunda linha */
+      }
+      
+      .text:nth-child(3) {
+        top: 100px; /* Espaçamento entre a segunda e a terceira linha */
+      }
+      
+      .text:nth-child(4) {
+        top: 150px; /* Espaçamento entre a terceira e a quarta linha */
+      }
+      
+      .container-add {
+        background-color: rgba(255, 255, 255, 0.12999999523162842);
+        height: 322px;
+        width: 317px;
+        border-radius: 10px;
+        border: 1px solid #ffffff;
+        top: 104px;
+        left: 817px;
+        position: absolute;
+        backdrop-filter: blur(30px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        animation: fadeIn 1s ease-in-out;
+      }
+      
+      .container-add:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Mudar o fundo no hover */
+        transform: scale(1.05); /* Ampliar no hover */
+      }
+      
+      /* Keyframe animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      
+      .text-add {
+        text-align: center;
+        color: #ffffff;
+        vertical-align: text-top;
+        font-size: 20px;
+        font-family: Poppins;
+        line-height: 0px;
+        border-style: hidden;
+        outline: none;
+        margin-top: 20px;
+      }
+      
+      .fas.fa-plus {
+        font-size: 48px;
+        color: #ffffff;
+        margin-bottom: 30px;
+      }
+    </style>
+
+    <title>Home Page</title>
+  </head>
+  <body>
+    <div class="background">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <div class="shape shape5"></div>
+        <div class="shape shape6"></div>        
+    </div>
+
+    <div class="nav-side">
+      <h3 class="menudaoficina">Menu da Oficina</h3>
+      <button type="submit" class="veiculos">Veiculos</button>
+      <button type="submit" class="pecas">Peças</button>
+      <button type="submit" class="servico">Serviços</button>
+      <button type="submit" class="clientes">Clientes</button>
+      <button type="submit" class="os">Ordens<br>de<br>Serviço</button>
+    </div>
+
+    <div class="container">
+        <p class="text">Nome</p>
+        <p class="text">Sobrenome </p>
+        <p class="text">Endereço</p>
+        <p class="text">Número de Telefone</p>
+      </div>
+      
+      <a href="{% url 'addcar' %}" class="container-add">
+      <i class="fas fa-plus"></i>
+      <p class="text-add">Adicionar</p>
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const shapes = document.querySelectorAll(".shape");
+    
+            shapes.forEach((shape, index) => {
+              shape.style.left = `${index * 100}px`; // Ajuste conforme necessário
+            });
+          });
+    </script>
+  </body>
+</html>
